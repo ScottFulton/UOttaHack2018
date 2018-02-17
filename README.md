@@ -6,9 +6,6 @@ Created for the uOttaHackathon.
 
 
 Project Members:
-
 Cedric Knapp
-
 Scott Fulton
-
 Oliver Fei
