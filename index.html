@@ -5,10 +5,18 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.0.0/dist/aframe-physics-system.min.js"></script>
     <script src="scripts/look_controls_no_drag.js"></script>
+    <script src="spectator.js"></script>
     <!-- Environment generation component . -->
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
+    <!-- This left-hand-side div holds the spectator view. -->
+  <div id="spectator" style="position:absolute; left:0; height:100%; top:0; width:50%; border: 0px solid blue; overflow:hidden">
+  </div>
+  
+  <!-- This right-hand-side div holds the typical view including A-Frame scene (note: embedded). -->
+  <div id="hmd" style="position:absolute; right:0; bottom:0; top:0; left:50%; border: 8px solid black; overflow:hidden">
+  
     <a-scene>
       <a-entity environment="preset: forest; numDressing: 500"></a-entity>
       <a-box dynamic-body="shape: box; mass: 1" position="-1 1.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
