@@ -40,8 +40,8 @@ AFRAME.registerComponent('spectator', {
     var targetEl = this.data.container;
     var self = this;
 
-    this.el.setAttribute('camera', 'active', false);
-    this.el.setAttribute('look-controls', 'hmdEnabled', false);
+    this.el.setAttribute('camera', 'active', true);
+    this.el.setAttribute('wasd-controls', 'hmdEnabled', true);
 
     // Create separate spectator renderer and canvas.
     this.renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -54,7 +54,7 @@ AFRAME.registerComponent('spectator', {
     // FIXME: aspect ratio doesn't match
     targetEl.appendChild(this.renderer.domElement);
 
-    var lookControls = this.el.components['look-controls'];
+    var lookControls = this.el.components['wasd-controls'];
 
     // Event listeners may have been added this tick,
     // so remove them next tick.
