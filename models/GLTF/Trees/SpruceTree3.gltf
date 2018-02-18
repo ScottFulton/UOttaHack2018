@@ -1,0 +1,290 @@
+{
+    "accessors": [
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 355,
+            "max": [
+                0.9984079599380493,
+                0.982238233089447,
+                1.0
+            ],
+            "min": [
+                -0.9738895893096924,
+                -0.9936679005622864,
+                -0.9999964237213135
+            ],
+            "name": "accessor_buffer_Cylinder.002_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 420,
+            "max": [
+                354
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Cylinder.002_1",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 138,
+            "max": [
+                352
+            ],
+            "min": [
+                9
+            ],
+            "name": "accessor_buffer_Cylinder.002_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 355,
+            "max": [
+                1.787507176399231,
+                1.5085034370422363,
+                9.739469528198242
+            ],
+            "min": [
+                -1.7309479713439941,
+                -1.5879731178283691,
+                -0.4586822986602783
+            ],
+            "name": "accessor_buffer_Cylinder.002_POSITION_0",
+            "type": "VEC3"
+        }
+    ],
+    "asset": {
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 4260,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Cylinder.002_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 4260,
+            "byteOffset": 4260,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Cylinder.002_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 280,
+            "byteOffset": 8520,
+            "name": "bufferView_buffer_Cylinder.002_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 844,
+            "byteOffset": 8800,
+            "name": "bufferView_buffer_Cylinder.002_1",
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 9644,
+            "name": "buffer_SpruceTree3",
+            "uri": "buffer_SpruceTree3.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "name": "Camera",
+            "perspective": {
+                "aspectRatio": 1.703595982340029,
+                "yfov": 0.5033799409866333,
+                "zfar": 100.0,
+                "znear": 0.10000000149011612
+            },
+            "type": "perspective"
+        }
+    ],
+    "materials": [
+        {
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "SpruceTreeLeaf",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "SpruceTreeTrunk",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Cylinder.002",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "POSITION": 3
+                    },
+                    "indices": 2,
+                    "material": 1,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "POSITION": 3
+                    },
+                    "indices": 1,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "camera": 0,
+            "name": "Camera",
+            "rotation": [
+                0.483536034822464,
+                0.20870360732078552,
+                0.33687159419059753,
+                0.7804827094078064
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                7.481131553649902,
+                -6.5076398849487305,
+                5.34366512298584
+            ]
+        },
+        {
+            "name": "Lamp",
+            "rotation": [
+                0.16907575726509094,
+                0.27217137813568115,
+                0.7558802962303162,
+                0.570947527885437
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                4.076245307922363,
+                1.0054539442062378,
+                5.903861999511719
+            ]
+        },
+        {
+            "mesh": 0,
+            "name": "SpruceTree3",
+            "rotation": [
+                -8.146034247147327e-08,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.4920164346694946,
+                1.4920164346694946,
+                1.328271746635437
+            ],
+            "translation": [
+                7.803376197814941,
+                10.395967483520508,
+                0.45925092697143555
+            ]
+        },
+        {
+            "children": [
+                2,
+                1,
+                0
+            ],
+            "matrix": [
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "name": "Scene_root"
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "active_camera": 0,
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                3
+            ]
+        }
+    ]
+}

@@ -1,0 +1,290 @@
+{
+    "accessors": [
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1806,
+            "max": [
+                0.9995607137680054,
+                0.9998908638954163,
+                0.9974997043609619
+            ],
+            "min": [
+                -0.99981689453125,
+                -0.9994862675666809,
+                -0.998277485370636
+            ],
+            "name": "accessor_buffer_Icosphere.001_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 588,
+            "max": [
+                1804
+            ],
+            "min": [
+                11
+            ],
+            "name": "accessor_buffer_Icosphere.001_1",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 1440,
+            "max": [
+                1805
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Icosphere.001_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1806,
+            "max": [
+                3.3583245277404785,
+                1.9477167129516602,
+                2.9430432319641113
+            ],
+            "min": [
+                -1.0615607500076294,
+                -2.5771148204803467,
+                -2.14346981048584
+            ],
+            "name": "accessor_buffer_Icosphere.001_POSITION_0",
+            "type": "VEC3"
+        }
+    ],
+    "asset": {
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 21672,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Icosphere.001_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 21672,
+            "byteOffset": 21672,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Icosphere.001_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2884,
+            "byteOffset": 43344,
+            "name": "bufferView_buffer_Icosphere.001_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1180,
+            "byteOffset": 46228,
+            "name": "bufferView_buffer_Icosphere.001_1",
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 47408,
+            "name": "buffer_OakTree3",
+            "uri": "buffer_OakTree3.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "name": "Camera",
+            "perspective": {
+                "aspectRatio": 1.703595982340029,
+                "yfov": 0.5033799409866333,
+                "zfar": 100.0,
+                "znear": 0.10000000149011612
+            },
+            "type": "perspective"
+        }
+    ],
+    "materials": [
+        {
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "OakTreeLeaf",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "OakTreeTrunk",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Icosphere.001",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "POSITION": 3
+                    },
+                    "indices": 2,
+                    "material": 0,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 0,
+                        "POSITION": 3
+                    },
+                    "indices": 1,
+                    "material": 1,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "camera": 0,
+            "name": "Camera",
+            "rotation": [
+                0.483536034822464,
+                0.20870360732078552,
+                0.33687159419059753,
+                0.7804827094078064
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                7.481131553649902,
+                -6.5076398849487305,
+                5.34366512298584
+            ]
+        },
+        {
+            "name": "Lamp",
+            "rotation": [
+                0.16907575726509094,
+                0.27217137813568115,
+                0.7558802962303162,
+                0.570947527885437
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                4.076245307922363,
+                1.0054539442062378,
+                5.903861999511719
+            ]
+        },
+        {
+            "mesh": 0,
+            "name": "OakTree3",
+            "rotation": [
+                -0.034943800419569016,
+                -0.004675767850130796,
+                -0.0038653335068374872,
+                0.9993708729743958
+            ],
+            "scale": [
+                3.1274752616882324,
+                3.1274757385253906,
+                3.1274757385253906
+            ],
+            "translation": [
+                5.057884216308594,
+                -13.449198722839355,
+                6.471893310546875
+            ]
+        },
+        {
+            "children": [
+                2,
+                1,
+                0
+            ],
+            "matrix": [
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "name": "Scene_root"
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "active_camera": 0,
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                3
+            ]
+        }
+    ]
+}

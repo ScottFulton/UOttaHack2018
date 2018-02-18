@@ -1,0 +1,242 @@
+{
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 890,
+            "max": [
+                2.201136827468872,
+                2.089688539505005,
+                6.909043312072754
+            ],
+            "min": [
+                -2.2254974842071533,
+                -2.2078499794006348,
+                -0.39861220121383667
+            ],
+            "name": "accessor_buffer_Cylinder.004_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 890,
+            "max": [
+                0.999798595905304,
+                0.9997585415840149,
+                1.0
+            ],
+            "min": [
+                -0.9982590079307556,
+                -0.9984518885612488,
+                -0.9999983310699463
+            ],
+            "name": "accessor_buffer_Cylinder.004_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 1338,
+            "max": [
+                889
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Cylinder.004_0",
+            "type": "SCALAR"
+        }
+    ],
+    "asset": {
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 10680,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Cylinder.004_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10680,
+            "byteOffset": 10680,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Cylinder.004_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2680,
+            "byteOffset": 21360,
+            "name": "bufferView_buffer_Cylinder.004_0",
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 24040,
+            "name": "buffer_DeadSpruce3",
+            "uri": "buffer_DeadSpruce3.bin"
+        }
+    ],
+    "cameras": [
+        {
+            "name": "Camera",
+            "perspective": {
+                "aspectRatio": 1.703595982340029,
+                "yfov": 0.5033799409866333,
+                "zfar": 100.0,
+                "znear": 0.10000000149011612
+            },
+            "type": "perspective"
+        }
+    ],
+    "materials": [
+        {
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "DeadSpruceTreeTrunk",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Cylinder.004",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 0
+                    },
+                    "indices": 2,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "camera": 0,
+            "name": "Camera",
+            "rotation": [
+                0.483536034822464,
+                0.20870360732078552,
+                0.33687159419059753,
+                0.7804827094078064
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                7.481131553649902,
+                -6.5076398849487305,
+                5.34366512298584
+            ]
+        },
+        {
+            "mesh": 0,
+            "name": "DeadSpruce3",
+            "rotation": [
+                -8.146034247147327e-08,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.589135766029358,
+                1.589135766029358,
+                1.8722944259643555
+            ],
+            "translation": [
+                7.566373825073242,
+                0.3567962646484375,
+                0.7522101402282715
+            ]
+        },
+        {
+            "name": "Lamp",
+            "rotation": [
+                0.16907575726509094,
+                0.27217137813568115,
+                0.7558802962303162,
+                0.570947527885437
+            ],
+            "scale": [
+                1.0,
+                0.9999999403953552,
+                1.0
+            ],
+            "translation": [
+                4.076245307922363,
+                1.0054539442062378,
+                5.903861999511719
+            ]
+        },
+        {
+            "children": [
+                1,
+                2,
+                0
+            ],
+            "matrix": [
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "name": "Scene_root"
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "active_camera": 0,
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                3
+            ]
+        }
+    ]
+}

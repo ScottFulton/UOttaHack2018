@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -8,6 +9,7 @@
     <script src="spectator.js"></script>
     <!-- Environment generation component . -->
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <!-- This left-hand-side div holds the spectator view. -->
@@ -18,6 +20,13 @@
   <div id="hmd" style="position:absolute; right:0; bottom:0; top:0; left:50%; width:50%; border: 8px solid black; overflow:hidden">
   
     <a-scene>
+
+      <!--Insert House1 model to test-->
+      <a-assets>
+          <a-asset-item id="house" src="models/House 1/House1.fbx"></a-asset-item>
+      </a-assets>
+      <a-entity fbx-model="src: #house" position="-2 5.6 -4" scale="0.01 0.01 0.01"></a-entity>
+
       <a-entity environment="preset: forest; numDressing: 500"></a-entity>
       <a-box dynamic-body="shape: box; mass: 1" position="-1 1.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="15" height="15" material="opacity: 0"></a-plane>
