@@ -2,12 +2,16 @@
   <head>
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.0.0/dist/aframe-physics-system.min.js"></script>
     <script src="scripts/look_controls_no_drag.js"></script>
     <script src="spectator.js"></script>
+    
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
     <!-- Environment generation component . -->
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
   </head>
   <body>
     <!-- This left-hand-side div holds the spectator view. -->
@@ -17,15 +21,43 @@
   <!-- This right-hand-side div holds the typical view including A-Frame scene (note: embedded). -->
   <div id="hmd" style="position:absolute; right:0; bottom:0; top:0; left:50%; width:50%; border: 8px solid black; overflow:hidden">
   
-    <a-scene>
+    <a-scene physics>
+        <a-assets>
+            <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
+
+            hoverable grabbable stretchable draggable
+
+            dynamic-body shadow></a-mixin>
+            <a-mixin id="cube-hovered" material="opacity: 0.7; transparent: true">
+
+            </a-mixin>
+            <a-mixin id="mytouch" physics-collider phase-shift
+
+            collision-filter="collisionForces: false"
+
+            static-body="shape: sphere; sphereRadius: 0.02"
+
+            super-hands="colliderEvent: collisions; colliderEventProperty: els;
+
+                         colliderEndEvent: collisions; colliderEndEventProperty: clearedEls;
+
+                         colliderState:"></a-mixin>
+        </a-assets>
+        <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+        <a-entity class="cube" mixin="cube" position="0 2 0" material="color: red"></a-entity>
+    
       <a-entity environment="preset: forest; numDressing: 500"></a-entity>
       <a-box dynamic-body="shape: box; mass: 1" position="-1 1.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="15" height="15" material="opacity: 0"></a-plane>
+      <a-plane static-body position="0 1 0" rotation="-90 0 0" width="15" height="15" material="opacity: 0"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity position="0 1.6 0" camera wasd-controls spectator follow-mouse active="true">
+      <a-entity position="0 1 0" camera wasd-controls spectator follow-mouse active="true">
             <a-box ></a-box>
       </a-entity>
-      <a-entity position="0 1.6 0" camera look-controls></a-entity>
+      <a-entity position="0 0 0" progressive-controls="touchMixin: mytouch; override: true">
+        <a-entity camera look-controls></a-entity>
+      </a-entity>
+
     </a-scene>
+  </div>
   </body>
 </html>
