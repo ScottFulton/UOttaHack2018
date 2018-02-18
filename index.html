@@ -3,7 +3,7 @@
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="utf-8" http-equiv="encoding">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.0.0/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.0.0/dist/aframe-physics-system.min.js"></script>
     <script src="scripts/look_controls_no_drag.js"></script>
     <!-- Environment generation component . -->
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
@@ -11,15 +11,12 @@
   <body>
     <a-scene>
       <a-entity environment="preset: forest; numDressing: 500"></a-entity>
-      
-      <a-entity environment="preset: forest; numDressing: 500"></a-entity>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-box dynamic-body="shape: box; mass: 1" position="-1 1.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="15" height="15" material="opacity: 0"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity position="0 1.6 0">
-
+      <a-entity position="0 1.6 0" camera wasd-controls follow-mouse spectator active="true">
+            <a-box ></a-box>
       </a-entity>
-      <a-entity position="0 1.6 0" camera wasd-controls follow-mouse spectator active="true"></a-entity>
       <a-entity position="0 1.6 0" camera="active: false" look-controls></a-entity>
     </a-scene>
   </body>
