@@ -12,6 +12,13 @@
     <!-- Environment generation component . -->
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script src="scripts/json-model.js"></script>
+    <script src="scripts/weapon.js"></script>
+    <script src="scripts/bullet.js"></script>
+    <script src="scripts/projectile_spawner.js"></script>
+    <script src="scripts/decals.js"></script>
+    
+
 
   </head>
   <body>
@@ -22,8 +29,53 @@
   <!-- This right-hand-side div holds the typical view including A-Frame scene (note: embedded). -->
   <div id="hmd" style="position:absolute; right:0; bottom:0; top:0; left:50%; width:50%; border: 8px solid black; overflow:hidden">
 
-    <a-scene physics>
+    <a-scene physics decals="maxDecals: 30; src: #bulletDecal; size: 0.3">
         <a-assets>
+                <a-asset-image src="assets/images/enemy_emissive0.jpg" crossOrigin="anonymous"> </a-asset-image>
+                <a-asset-image src="assets/images/enemy_emissive1.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/enemy_emissive2.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/enemy_emissive3.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/enemy_diff.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/enemy_spec.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/gun_diff.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/gun_spec.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image src="assets/images/gun_normal.png" crossOrigin="anonymous"></a-asset-image>
+        
+                <a-asset-image src="assets/images/decal0.png" crossOrigin="anonymous"></a-asset-image>
+        
+                <a-asset-image id="emissive0" src="assets/images/enemy_emissive0.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image id="emissive1" src="assets/images/enemy_emissive1.jpg" crossOrigin="anonymous"></a-asset-image>
+                <a-asset-image id="emissive2" src="assets/images/enemy_emissive2.jpg" crossOrigin="anonymous"></a-asset-image>
+        
+                <a-asset-item id="enemy0" src="assets/models/enemy0.json"></a-asset-item>
+                <a-asset-item id="enemy1" src="assets/models/enemy1.json"></a-asset-item>
+                <a-asset-item id="enemy2" src="assets/models/enemy2.json"></a-asset-item>
+                <a-asset-item id="enemy3" src="assets/models/enemy3.json"></a-asset-item>
+                <a-asset-item id="playerBullet" src="assets/models/player-bullet.json"></a-asset-item>
+                <a-asset-item id="enemyBullet" src="assets/models/enemy-bullet.json"></a-asset-item>
+                <img id="bulletDecal" src="assets/images/decal0.png" crossOrigin="anonymous">
+                <img id="hurtImg" src="assets/images/damage.png" crossOrigin="anonymous">
+                <img id="fx1" src="assets/images/fx1.png" crossOrigin="anonymous">
+                <img id="fx2" src="assets/images/fx2.png" crossOrigin="anonymous">
+                <img id="fx3" src="assets/images/fx3.png" crossOrigin="anonymous">
+                <img id="fx4" src="assets/images/fx4.png" crossOrigin="anonymous">
+                <img id="fx5" src="assets/images/fx5.png" crossOrigin="anonymous">
+                <img id="fx6" src="assets/images/fx6.png" crossOrigin="anonymous">
+                <img id="fx7" src="assets/images/fx7.png" crossOrigin="anonymous">
+                <img id="fx8" src="assets/images/fx8.png" crossOrigin="anonymous">
+                <audio id="mainThemeOgg" src="assets/sounds/music.ogg"  crossorigin="anonymous"></audio>
+                <audio id="introOgg" src="assets/sounds/intro.ogg"  crossorigin="anonymous"></audio>
+                <audio id="explosion0" src="assets/sounds/explosion0.ogg"  crossorigin="anonymous"></audio>
+                <audio id="explosion1" src="assets/sounds/explosion1.ogg"  crossorigin="anonymous"></audio>
+                <audio id="explosion2" src="assets/sounds/explosion2.ogg"  crossorigin="anonymous"></audio>
+                <audio id="explosion3" src="assets/sounds/explosion3.ogg"  crossorigin="anonymous"></audio>
+                <audio id="hitbullet" src="assets/sounds/hitbullet.ogg"  crossorigin="anonymous"></audio>
+                <audio id="hitwall" src="assets/sounds/hitwall.ogg"  crossorigin="anonymous"></audio>
+                <audio id="hurtOgg" src="assets/sounds/hurt.ogg"  crossorigin="anonymous"></audio>
+                <audio id="enemy0shoot" src="assets/sounds/enemy0shoot.ogg"  crossorigin="anonymous"></audio>
+                <audio id="enemy1shoot" src="assets/sounds/enemy1shoot.ogg"  crossorigin="anonymous"></audio>
+                <audio id="enemy2shoot" src="assets/sounds/enemy2shoot.ogg"  crossorigin="anonymous"></audio>
+        <audio id="enemy3shoot" src="assets/sounds/enemy3shoot.ogg" crossorigin="anonymous"></audio>
             <a-mixin id="cube" geometry="primitive: box; width: 0.33; height: 0.33; depth: 0.33"
 
             hoverable grabbable stretchable draggable
@@ -50,13 +102,13 @@
 
       <a-entity environment="preset: forest; numDressing: 500"></a-entity>
       <a-box dynamic-body="shape: box; mass: 1" position="-1 1.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-plane static-body position="0 1 0" rotation="-90 0 0" width="15" height="15" material="opacity: 0"></a-plane>
+      <a-plane static-body position="0 0 0" rotation="-90 0 0" width="15" height="15" material="opacity: 0"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
-      <a-entity position="0 1 0" camera wasd-controls spectator follow-mouse active="true">
-            <a-box ></a-box>
+      <a-entity position="0 1.6 0" camera wasd-controls spectator follow-mouse active="true" shoot="direction: 0 0 -1">
+            <a-box></a-box>
       </a-entity>
-      <a-entity position="0 0 0" progressive-controls="touchMixin: mytouch; override: true">
-        <a-entity camera look-controls></a-entity>
+      <a-entity position="0 1 0" progressive-controls="touchMixin: mytouch; override: true">
+        <a-entity id="start_enemy" camera look-controls collision-helper="radius: 0.65"></a-entity>
       </a-entity>
 
     </a-scene>
