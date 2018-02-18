@@ -18,7 +18,7 @@ AFRAME.registerComponent('spectator', {
     // Allowed slop in timings for FPS computation.
     slopMsec: {type: 'number', default: 1},
     // Auto-disable active camera wasd-controls (so it only moves spectator).
-    disableActiveCameraWasdControls: {type: 'boolean', default: false}
+    disableActiveCameraWasdControls: {type: 'boolean', default: true}
   },
 
   fixCamera: function () {
@@ -29,9 +29,6 @@ AFRAME.registerComponent('spectator', {
   },
   
   removeLookControlsListenersAndFixCamera: function () {
-    var lookControls = this.el.components['look-controls'];
-    lookControls.removeEventListeners();
-
     this.fixCamera();
   },
 
@@ -40,8 +37,8 @@ AFRAME.registerComponent('spectator', {
     var targetEl = this.data.container;
     var self = this;
 
-    this.el.setAttribute('camera', 'active', true);
-    this.el.setAttribute('wasd-controls', 'hmdEnabled', true);
+    this.el.setAttribute('camera', 'active', false);
+    this.el.setAttribute('look-controls', 'hmdEnabled', false);
 
     // Create separate spectator renderer and canvas.
     this.renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -53,8 +50,6 @@ AFRAME.registerComponent('spectator', {
     // Attach spectator canvas to specified element.
     // FIXME: aspect ratio doesn't match
     targetEl.appendChild(this.renderer.domElement);
-
-    var lookControls = this.el.components['wasd-controls'];
 
     // Event listeners may have been added this tick,
     // so remove them next tick.
@@ -68,17 +63,12 @@ AFRAME.registerComponent('spectator', {
         setTimeout(self.removeLookControlsListenersAndFixCamera);
     });
 
-    // Attach look-controls handlers to spectator.
-    targetEl.addEventListener('mousedown', function (e) {
-      lookControls.onMouseDown(e); 
-    }, false);
-
     var self = this;
     this.el.sceneEl.addEventListener('camera-set-active', function (e) {
       if (!self.data.disableActiveCameraWasdControls) { return; }
       // Detach wasd-controls on the active camera,
       // assuming that we want to move the spectator instead.
-      e.detail.cameraEl.setAttribute('wasd-controls', 'enabled', false);
+      e.detail.cameraEl.setAttribute('wasd-controls', 'enabled', true);
     });
 
     var self = this;
@@ -101,6 +91,11 @@ AFRAME.registerComponent('spectator', {
       self.renderer.setSize(targetEl.offsetWidth, targetEl.offsetHeight );
       self.fixCamera();
     });
+
+    this.renderer.domElement.onclick = this.requestPointer.bind(this);
+    document.addEventListener('pointerlockchange', this.onPointerLockChange, false);
+    document.addEventListener('mozpointerlockchange', this.onPointerLockChange, false);
+    document.addEventListener('pointerlockerror', this.onPointerLockError, false);
   },
 
   tick: function (t, dt) {
@@ -112,5 +107,25 @@ AFRAME.registerComponent('spectator', {
 
   render: function () {
     this.renderer.render(this.el.sceneEl.object3D, this.el.object3DMap.camera);
+  },
+  onPointerLockChange: function () {
+    this.pointerLocked = !!(document.pointerLockElement || document.mozPointerLockElement);
+  },
+  /**
+   * Recover from Pointer Lock error.
+   */
+  onPointerLockError: function () {
+    this.pointerLocked = false;
+  },
+
+  requestPointer: function() {
+    console.log("pointer request");
+    var sceneEl = this.el.sceneEl;
+    var canvasEl = sceneEl && sceneEl.canvas;
+    if (canvasEl.requestPointerLock) {
+      canvasEl.requestPointerLock();
+    } else if (canvasEl.mozRequestPointerLock) {
+      canvasEl.mozRequestPointerLock();
+    }
   }
 });
